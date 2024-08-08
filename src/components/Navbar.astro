@@ -1,0 +1,42 @@
+---
+interface Props {
+  title: string;
+}
+
+import { SignedIn, SignedOut,SignUp, UserButton, SignInButton,SignUpButton } from "@clerk/astro/components";
+
+const { title } = Astro.props;
+---
+
+<style>
+    /* *{
+        border:1px solid red;
+    } */
+   
+
+</style>
+<div class="flex justify-between bg-purple-950 align-middle p-5 ">
+    <div class="text-purple-400 hover:text-purple-50 hover:cursor-pointer">Logo here</div>
+
+  <div class="flex justify-evenly gap-5">
+      <div class="text-purple-400 hover:text-purple-50 hover:cursor-pointer">Docs</div>
+      <div class="text-purple-400 hover:text-purple-50 hover:cursor-pointer">Pricing</div>
+      <div class="text-purple-400 hover:text-purple-50 hover:cursor-pointer">About us</div>
+      <div class="text-purple-400 hover:text-purple-50 hover:cursor-pointer">Blog</div>
+      <div class="text-purple-400 hover:text-purple-50 hover:cursor-pointer">Contact</div>
+  </div>
+
+  <div class="flex justify-between gap-3">
+    <SignedOut>
+        <div class="text-purple-400 hover:text-purple-50 hover:cursor-pointer flex items-center ">  <SignInButton mode="modal">Log in </SignInButton></div>
+     <div class="bg-purple-400 text-purple-950 px-4 py-1 hover:bg-purple-700 hover:text-purple-300 hover:cursor-pointer"><SignUpButton mode="modal"></div>
+    </SignedOut>
+    <SignedIn>
+       <a href="/profile"> <UserButton /></a> 
+      </SignedIn>
+ </div>
+</div>
+
+
+
+       
